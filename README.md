@@ -2,7 +2,7 @@
 
 ## Installation
 
-### Python instalation
+### Python installation
 
     sudo apt install python-is-python3
 
