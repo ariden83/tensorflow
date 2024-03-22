@@ -26,3 +26,7 @@
     
     sudo apt-get install cuda
 
+## Documentation
+
+- [How to predict stock market using Google Tensorflow and LSTM neural network](https://medium.com/@dmytrosazonov/how-to-predict-stock-market-using-google-tensorflow-and-lstm-neural-network-81ccc41a22a8)
+- [Trading algorithm that “!works”](https://trading-data-analysis.pro/trading-algorithm-that-doesnt-work-37e747f4c6a6)

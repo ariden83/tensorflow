@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <link href="https://jinglescode.github.io/assets/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="https://jinglescode.github.io/assets/css/custom.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+<div class="container blog-content">
+
+    <div class="card" id="div_data">
+        <div class="card-content">
+
+            <div class="row" id="div_container_linegraph" style="display:none">
+                <div class="col s12">
+                    <div class="card z-depth-2">
+                        <div class="card-content">
+                            <div>
+                                <div id="div_linegraph_data" style="width:100%; height:350px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" id="div_container_sma" >
+                <div class="col s12">
+                    <div class="card z-depth-2">
+                        <div class="card-content">
+                            <span class="card-title grey-text text-darken-4" id="div_linegraph_sma_title"></span>
+                            <div id="div_linegraph_sma" style="width:100%; height:350px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" id="div_container_trainingdata" style="display:none">
+                <div class="col s12">
+                    <div class="card z-depth-2">
+                        <div class="card-content">
+                            <span class="card-title grey-text text-darken-4">Training Data (top 25 rows)</span>
+                            <div style="overflow-x: scroll;" id="div_trainingdata">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- E Simple Moving Average -->
+
+    <div class="card" id="div_train">
+        <div class="card-content">
+            <div class="row" id="div_container_training" style="display:none">
+                <div class="col s12">
+                    <div class="card z-depth-2">
+                        <div class="card-content">
+                            <div class="progress">
+                                <div class="determinate" id="div_training_progressbar" style="width: 100%"></div>
+                            </div>
+                            <hr/>
+                            <h6>Loss</h6>
+                            <div id="div_linegraph_trainloss" style="width:100%; height:250px;"></div>
+                            <hr/>
+                            <h6>Logs</h6>
+                            <div id="div_traininglog" style="overflow-x: scroll; overflow-y: scroll; height: 250px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- E Train Neural Network -->
+
+    <div class="card">
+        <div class="card-content">
+            <div class="row" id="div_container_validating">
+                <div class="col s12">
+                    <div class="card z-depth-2">
+                        <div class="card-content">
+                            <div id="div_validation_graph"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- E Validation -->
+
+    <div class="card">
+        <div class="card-content">
+
+            <div class="row" id="div_container_predict" >
+                <div class="col s6">
+                    <button class="waves-effect waves-light btn" id="btn_prediction" onclick="onClickPredict()">Make Prediction</button>
+                    <div class="spinner-border" id="load_predicting" style="display:none"></div>
+                </div>
+            </div>
+            <div class="row" id="div_container_predicting" style="display:none">
+                <div class="col s12">
+                    <div class="card z-depth-2">
+                        <div class="card-content">
+                            <span class="card-title grey-text text-darken-4" id="div_predict_title">Predicted</span>
+                            <div id="div_prediction_graph"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- E Make Prediction -->
+
+
+    <!-- E Conclusion -->
+</div> <!-- E container -->
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://jinglescode.github.io/assets/js/materialize.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<script src="./model.js"></script>
+<script src="./index.js"></script>
+
+</body>
+</html>
